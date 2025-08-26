@@ -1,0 +1,134 @@
+name: 🎨 UI/UX Improvement
+description: Request improvements to the user interface or user experience
+title: "UI/UX: [BRIEF DESCRIPTION]"
+labels: ["enhancement", "ui/ux", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea to make the interface better for teachers and students? Let's hear it! Please provide detailed information so our Copilot coding agent can implement your vision.
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      description: What kind of UI/UX improvement is this?
+      options:
+        - New Feature
+        - Visual Enhancement
+        - Navigation Improvement
+        - Accessibility Enhancement
+        - Mobile Responsiveness
+        - Performance Improvement
+        - User Workflow Enhancement
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: Affected Area
+      description: Which part of the application does this affect?
+      options:
+        - Activity List/Cards Display
+        - Activity Filters (category, day, time)
+        - Student Registration Modal
+        - Teacher Login Interface
+        - Activity Details View
+        - Participant Management
+        - Overall Layout/Navigation
+        - Mobile View
+        - Entire Application
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior/Appearance
+      description: Describe how the interface currently works or looks
+      placeholder: e.g., "Currently, activity cards show basic information but it's hard to quickly see which activities have space available"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: Desired Behavior/Appearance
+      description: Describe how you want it to work or look instead
+      placeholder: e.g., "Activity cards should have color-coded borders: green for available spots, yellow for nearly full, red for full"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-benefit
+    attributes:
+      label: Primary User Benefit
+      description: Who will benefit most from this improvement?
+      options:
+        - Teachers (easier activity management)
+        - Students (better activity discovery)
+        - Both teachers and students
+        - School administrators
+        - Parents/guardians
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority-level
+    attributes:
+      label: Priority Level
+      description: How important is this improvement?
+      options:
+        - High - Significantly impacts daily usage
+        - Medium - Would be helpful but not critical
+        - Low - Nice to have enhancement
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific-examples
+    attributes:
+      label: Specific Examples or Mockups
+      description: Provide specific examples, mockups, or references to similar interfaces
+      placeholder: e.g., "Similar to how Gmail shows unread emails with bold text" or "Like the card layout on [website URL]"
+
+  - type: checkboxes
+    id: implementation-hints
+    attributes:
+      label: Implementation Considerations
+      description: Check any relevant technical hints or requirements
+      options:
+        - label: Should work on mobile devices
+        - label: Should maintain current color scheme
+        - label: Should be accessible for users with disabilities
+        - label: Should not affect existing functionality
+        - label: Should improve page load speed
+        - label: Should work with current browser support
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that would help with implementation?
+      placeholder: e.g., "This improvement was suggested by multiple teachers during our monthly meeting"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this improvement is successfully implemented?
+      options:
+        - label: The visual/functional improvement is implemented as described
+          required: true
+        - label: The improvement works consistently across different browsers
+          required: true
+        - label: The improvement doesn't break any existing functionality
+          required: true
+        - label: The improvement is accessible and user-friendly
+          required: true
+        - label: The improvement provides the specified user benefit
+          required: true

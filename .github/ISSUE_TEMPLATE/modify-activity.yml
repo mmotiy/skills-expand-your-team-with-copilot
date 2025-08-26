@@ -1,0 +1,152 @@
+name: ✏️ Modify Existing Activity
+description: Request changes to an existing activity's details, schedule, or capacity
+title: "Modify activity: [ACTIVITY NAME]"
+labels: ["enhancement", "modify-activity", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Need to update an existing activity? Please provide the details below so our Copilot coding agent can make the changes efficiently.
+
+  - type: dropdown
+    id: existing-activity
+    attributes:
+      label: Activity to Modify
+      description: Which activity needs to be changed?
+      options:
+        - Chess Club
+        - Programming Class
+        - Art Club
+        - Drama Club
+        - Math Club
+        - Debate Team
+        - Weekend Robotics Workshop
+        - Science Olympiad
+        - Sunday Chess Tournament
+        - Manga Maniacs
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: other-activity
+    attributes:
+      label: Other Activity Name
+      description: If you selected "Other" above, specify the activity name
+      placeholder: e.g., "Photography Club"
+
+  - type: checkboxes
+    id: what-to-change
+    attributes:
+      label: What needs to be changed?
+      description: Select all that apply
+      options:
+        - label: Activity name
+        - label: Description
+        - label: Schedule (days/times)
+        - label: Maximum participants capacity
+        - label: Category/type
+        - label: Supervising teacher
+
+  - type: input
+    id: new-name
+    attributes:
+      label: New Activity Name
+      description: If changing the name, what should the new name be?
+      placeholder: e.g., "Advanced Chess Club"
+
+  - type: textarea
+    id: new-description
+    attributes:
+      label: New Description
+      description: If changing the description, provide the updated text
+      placeholder: e.g., "Advanced chess strategies and tournament preparation for competitive players"
+
+  - type: checkboxes
+    id: new-schedule-days
+    attributes:
+      label: New Schedule - Days of the Week
+      description: If changing schedule, select the new days
+      options:
+        - label: Monday
+        - label: Tuesday
+        - label: Wednesday
+        - label: Thursday
+        - label: Friday
+        - label: Saturday
+        - label: Sunday
+
+  - type: input
+    id: new-start-time
+    attributes:
+      label: New Start Time
+      description: If changing schedule, what's the new start time? (24-hour format)
+      placeholder: e.g., "15:30" for 3:30 PM
+
+  - type: input
+    id: new-end-time
+    attributes:
+      label: New End Time
+      description: If changing schedule, what's the new end time? (24-hour format)
+      placeholder: e.g., "17:00" for 5:00 PM
+
+  - type: input
+    id: new-capacity
+    attributes:
+      label: New Maximum Participants
+      description: If changing capacity, what's the new maximum number?
+      placeholder: e.g., "20"
+
+  - type: dropdown
+    id: new-category
+    attributes:
+      label: New Activity Category
+      description: If changing category, select the new one
+      options:
+        - Academic
+        - Sports
+        - Arts & Creativity
+        - Technology
+        - Community Service
+        - Other
+
+  - type: input
+    id: new-supervisor
+    attributes:
+      label: New Supervising Teacher
+      description: If changing supervisor, who is the new teacher?
+      placeholder: e.g., "Ms. Johnson"
+
+  - type: textarea
+    id: reason-for-change
+    attributes:
+      label: Reason for Changes
+      description: Why are these changes needed? This helps with implementation context.
+      placeholder: e.g., "Need to accommodate more students due to high demand" or "Schedule conflicts with other activities"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-participants
+    attributes:
+      label: Current Participants Impact
+      description: How should current participants be handled? Should they remain registered?
+      placeholder: e.g., "Keep all current participants registered" or "Remove all participants and restart registration"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Confirm what needs to be implemented (check all that apply)
+      options:
+        - label: Update the activity details in the database
+          required: true
+        - label: Changes should be reflected immediately on the website
+          required: true
+        - label: Current participants should be handled as specified
+          required: true
+        - label: Updated activity should maintain all filtering and search functionality
+          required: true
+        - label: Teachers should be able to continue managing student registrations
+          required: true

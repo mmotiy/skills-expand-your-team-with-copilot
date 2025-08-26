@@ -1,0 +1,156 @@
+name: ✨ New Feature Request
+description: Suggest a new feature to enhance the activity management system
+title: "Feature: [FEATURE NAME]"
+labels: ["enhancement", "feature-request", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for a new feature? Great! Please provide detailed information so our Copilot coding agent can understand and implement your vision effectively.
+
+  - type: input
+    id: feature-name
+    attributes:
+      label: Feature Name
+      description: What would you call this new feature?
+      placeholder: e.g., "Student Attendance Tracking", "Activity Calendar View", "Email Notifications"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: Feature Category
+      description: What type of feature is this?
+      options:
+        - Student Management
+        - Activity Management
+        - Teacher Tools
+        - Reporting & Analytics
+        - Communication & Notifications
+        - Calendar & Scheduling
+        - Data Import/Export
+        - User Experience
+        - Mobile Features
+        - Integration
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? What need does it address?
+      placeholder: e.g., "Teachers currently have no way to track which students attended each activity session, making it difficult to manage participation and plan activities"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed feature in detail. How should it work?
+      placeholder: e.g., "Add an attendance feature where teachers can mark students as present/absent for each activity session. This should include a simple checklist interface and store attendance history."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-users
+    attributes:
+      label: Primary Users
+      description: Who would use this feature most?
+      options:
+        - Teachers
+        - Students
+        - School Administrators
+        - Parents/Guardians
+        - Multiple user types
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature?
+      options:
+        - High - Essential for daily operations
+        - Medium - Would significantly improve workflow
+        - Low - Nice to have enhancement
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-workflow
+    attributes:
+      label: User Workflow
+      description: Describe step-by-step how a user would interact with this feature
+      placeholder: |
+        1. Teacher logs in and goes to an activity page
+        2. Teacher clicks "Take Attendance" button
+        3. System shows list of registered students with checkboxes
+        4. Teacher checks/unchecks students who are present
+        5. Teacher clicks "Save Attendance"
+        6. System stores the attendance record with date/time
+    validations:
+      required: true
+
+  - type: textarea
+    id: success-metrics
+    attributes:
+      label: Success Metrics
+      description: How would you measure if this feature is successful?
+      placeholder: e.g., "Teachers use the attendance feature for 80% of activity sessions" or "Time spent on activity management decreases by 30%"
+
+  - type: checkboxes
+    id: technical-requirements
+    attributes:
+      label: Technical Requirements
+      description: Check any technical requirements or constraints
+      options:
+        - label: Should work on mobile devices
+        - label: Should integrate with existing user authentication
+        - label: Should store data in the current database
+        - label: Should be accessible for users with disabilities
+        - label: Should maintain current performance levels
+        - label: Should not require additional external services
+
+  - type: textarea
+    id: similar-systems
+    attributes:
+      label: Similar Systems or Examples
+      description: Are there any existing systems or examples that work similarly to what you're envisioning?
+      placeholder: e.g., "Similar to Google Classroom's attendance feature" or "Like the check-in system at fitness centers"
+
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternative Solutions Considered
+      description: Have you considered other ways to solve this problem?
+      placeholder: e.g., "We considered using paper attendance sheets, but they're easy to lose and hard to analyze"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that would help with implementation?
+      placeholder: e.g., "This feature was requested by the school principal for better activity reporting"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this feature is successfully implemented?
+      options:
+        - label: The feature solves the stated problem effectively
+          required: true
+        - label: The feature integrates seamlessly with existing functionality
+          required: true
+        - label: The feature is intuitive and easy to use for the target users
+          required: true
+        - label: The feature works reliably without breaking existing features
+          required: true
+        - label: The feature provides the expected user workflow
+          required: true

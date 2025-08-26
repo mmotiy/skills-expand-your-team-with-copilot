@@ -1,0 +1,177 @@
+name: 📊 Data Management Request
+description: Request changes to student data, bulk operations, or data import/export
+title: "Data: [BRIEF DESCRIPTION]"
+labels: ["enhancement", "data-management", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Need to manage student data in bulk or import/export information? This template will help our Copilot coding agent understand exactly what data operations you need.
+
+  - type: dropdown
+    id: operation-type
+    attributes:
+      label: Type of Data Operation
+      description: What kind of data operation do you need?
+      options:
+        - Bulk Student Registration
+        - Bulk Student Removal
+        - Import Student List
+        - Export Activity Reports
+        - Export Student Lists
+        - Update Activity Schedules in Bulk
+        - Transfer Students Between Activities
+        - Clear All Participants from Activity
+        - Import New Activities from File
+        - Other Data Operation
+    validations:
+      required: true
+
+  - type: textarea
+    id: operation-description
+    attributes:
+      label: Detailed Description
+      description: Describe exactly what data operation you need
+      placeholder: e.g., "I need to register 25 students for Chess Club from a CSV file with their email addresses"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-activities
+    attributes:
+      label: Affected Activities
+      description: Which activities are involved?
+      options:
+        - Chess Club
+        - Programming Class
+        - Art Club
+        - Drama Club
+        - Math Club
+        - Debate Team
+        - Weekend Robotics Workshop
+        - Science Olympiad
+        - Sunday Chess Tournament
+        - Manga Maniacs
+        - Multiple Activities (specify below)
+        - All Activities
+        - New Activities to be Created
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-details
+    attributes:
+      label: Activity Details
+      description: If "Multiple Activities" or "New Activities" selected, specify which ones
+      placeholder: e.g., "Chess Club, Math Club, and Programming Class" or "List the specific activities involved"
+
+  - type: dropdown
+    id: data-source
+    attributes:
+      label: Data Source/Format
+      description: Where is the data coming from?
+      options:
+        - CSV/Excel File
+        - Manual List (will provide in description)
+        - Current System Data
+        - External School System
+        - Google Sheets
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: data-format
+    attributes:
+      label: Data Format Details
+      description: Describe the format of your data or provide a sample
+      placeholder: |
+        e.g., For CSV: 
+        student_email,activity_name
+        john@mergington.edu,Chess Club
+        jane@mergington.edu,Programming Class
+        
+        Or for manual list:
+        john@mergington.edu - Chess Club
+        jane@mergington.edu - Programming Class
+
+  - type: input
+    id: estimated-records
+    attributes:
+      label: Estimated Number of Records
+      description: Approximately how many students/activities are involved?
+      placeholder: e.g., "50 students", "3 activities", "100 registrations"
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency Level
+      description: How soon do you need this completed?
+      options:
+        - Urgent - Needed within 1-2 days
+        - Soon - Needed within a week
+        - Normal - Can wait 1-2 weeks
+        - Low - Whenever convenient
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing-data-handling
+    attributes:
+      label: Existing Data Handling
+      description: How should existing data be handled?
+      placeholder: e.g., "Keep all existing registrations and add new ones" or "Replace all current participants with the new list"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: validation-requirements
+    attributes:
+      label: Data Validation Requirements
+      description: What validation is needed?
+      options:
+        - label: Verify all email addresses are valid @mergington.edu format
+        - label: Check that activities exist before registering students
+        - label: Ensure students aren't registered for conflicting time slots
+        - label: Verify capacity limits aren't exceeded
+        - label: Remove duplicate entries automatically
+        - label: Create backup of current data before changes
+
+  - type: textarea
+    id: error-handling
+    attributes:
+      label: Error Handling
+      description: How should errors be handled (invalid emails, full activities, etc.)?
+      placeholder: e.g., "Skip invalid entries and provide a report of what was skipped" or "Stop the process if any errors are found"
+
+  - type: textarea
+    id: confirmation-requirements
+    attributes:
+      label: Confirmation and Review
+      description: Do you need to review the changes before they're applied?
+      placeholder: e.g., "Yes, show me a preview of all changes before applying them" or "No, apply changes automatically if validation passes"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information about this data operation?
+      placeholder: e.g., "This is for the new semester student assignments" or "Data comes from our school's main registration system"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this data operation was successful?
+      options:
+        - label: All valid data is processed correctly according to specifications
+          required: true
+        - label: Invalid or problematic data is handled as specified
+          required: true
+        - label: A report is provided showing what was processed
+          required: true
+        - label: No existing valid data is accidentally lost or corrupted
+          required: true
+        - label: The system remains functional and performant after the operation
+          required: true

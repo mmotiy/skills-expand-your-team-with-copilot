@@ -1,6 +1,22 @@
 # Development Guide
 
-## Initial Setup
+## For Teachers: Requesting Changes
+
+If you're a teacher looking to request changes to the activity management system, please use our structured issue templates instead of modifying code directly:
+
+**[📝 Create a New Request](https://github.com/mmotiy/skills-expand-your-team-with-copilot/issues/new/choose)**
+
+Available templates:
+- 🎯 **Add New Activity** - For creating new clubs, sports, or activities
+- ✏️ **Modify Existing Activity** - For changing schedules, capacity, or details
+- 🎨 **UI/UX Improvement** - For interface enhancements
+- 🐛 **Bug Report** - For reporting problems or errors
+- ✨ **New Feature Request** - For requesting new capabilities
+- 📊 **Data Management** - For bulk operations or data import/export
+
+[📖 See the full template guide](.github/ISSUE_TEMPLATE/README.md) for detailed help on which template to use.
+
+## For Developers: Initial Setup
 
 This project is best developed using GitHub Codespaces, which provides a consistent development environment with all the necessary tools pre-configured.
 
