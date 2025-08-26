@@ -1,0 +1,157 @@
+name: 🐛 Bug Report
+description: Report a problem or error in the activity management system
+title: "Bug: [BRIEF DESCRIPTION]"
+labels: ["bug", "teacher-report"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found a bug? Help us fix it quickly by providing detailed information below. Our Copilot coding agent will use this information to identify and resolve the issue.
+
+  - type: dropdown
+    id: bug-area
+    attributes:
+      label: Where did the bug occur?
+      description: Which part of the system has the problem?
+      options:
+        - Activity List Display
+        - Activity Filters
+        - Student Registration
+        - Teacher Login
+        - Activity Management
+        - Participant Management (add/remove students)
+        - Mobile View
+        - Data Loading/Saving
+        - User Authentication
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bug-severity
+    attributes:
+      label: Bug Severity
+      description: How severe is this bug?
+      options:
+        - Critical - System is unusable or data is lost
+        - High - Major functionality is broken
+        - Medium - Feature doesn't work as expected
+        - Low - Minor visual or usability issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: What exactly is happening that shouldn't be happening?
+      placeholder: e.g., "When I try to register a student for Chess Club, I get an error message and the student is not added to the list"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide step-by-step instructions to reproduce this bug
+      placeholder: |
+        1. Log in as teacher with username 'mrodriguez'
+        2. Click on 'Chess Club' activity
+        3. Click 'Register Student' button
+        4. Enter student email 'student@mergington.edu'
+        5. Click 'Register' button
+        6. Error appears: "Failed to register student"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: e.g., "The student should be successfully added to the Chess Club participant list and I should see a confirmation message"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: e.g., "An error message appears and the student is not added to the participant list"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      description: What device are you using?
+      options:
+        - Desktop/Laptop Computer
+        - Tablet
+        - Mobile Phone
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error Messages
+      description: If there are any error messages, please copy them exactly here
+      placeholder: e.g., "Error 500: Internal Server Error" or "Authentication required for this action"
+
+  - type: input
+    id: teacher-username
+    attributes:
+      label: Your Teacher Username
+      description: What username were you logged in with when this happened?
+      placeholder: e.g., "mrodriguez"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that might help us understand and fix this bug?
+      placeholder: e.g., "This started happening yesterday after the system was working fine for weeks"
+
+  - type: checkboxes
+    id: bug-frequency
+    attributes:
+      label: Bug Frequency
+      description: How often does this bug occur?
+      options:
+        - label: Always - happens every time I try this action
+        - label: Often - happens most of the time
+        - label: Sometimes - happens occasionally
+        - label: Rarely - only happened once or twice
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Bug Fix Acceptance Criteria
+      description: How will we know this bug is fixed?
+      options:
+        - label: The described steps no longer produce the error
+          required: true
+        - label: The feature works as expected in the described scenario
+          required: true
+        - label: The fix doesn't break any other functionality
+          required: true
+        - label: The fix works across different browsers and devices
+          required: true

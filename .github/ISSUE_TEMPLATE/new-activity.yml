@@ -1,0 +1,124 @@
+name: 🎯 Add New Activity
+description: Request to add a new extracurricular activity to the system
+title: "Add new activity: [ACTIVITY NAME]"
+labels: ["enhancement", "new-activity", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for requesting a new activity! Please fill out the information below to help our Copilot coding agent implement this feature efficiently.
+
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: What is the name of the new activity?
+      placeholder: e.g., "Robotics Club", "Creative Writing Workshop"
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-description
+    attributes:
+      label: Activity Description
+      description: Provide a detailed description of what this activity involves
+      placeholder: e.g., "Build and program robots using Arduino and sensors. Students will learn basic engineering principles and coding."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: activity-category
+    attributes:
+      label: Activity Category
+      description: What type of activity is this?
+      options:
+        - Academic
+        - Sports
+        - Arts & Creativity
+        - Technology
+        - Community Service
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: max-participants
+    attributes:
+      label: Maximum Participants
+      description: How many students can participate in this activity?
+      placeholder: e.g., "15"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: schedule-days
+    attributes:
+      label: Schedule - Days of the Week
+      description: Select all days when this activity will occur
+      options:
+        - label: Monday
+        - label: Tuesday
+        - label: Wednesday
+        - label: Thursday
+        - label: Friday
+        - label: Saturday
+        - label: Sunday
+
+  - type: input
+    id: start-time
+    attributes:
+      label: Start Time
+      description: What time does the activity start? (Use 24-hour format)
+      placeholder: e.g., "15:30" for 3:30 PM
+    validations:
+      required: true
+
+  - type: input
+    id: end-time
+    attributes:
+      label: End Time
+      description: What time does the activity end? (Use 24-hour format)
+      placeholder: e.g., "17:00" for 5:00 PM
+    validations:
+      required: true
+
+  - type: input
+    id: teacher-supervisor
+    attributes:
+      label: Supervising Teacher
+      description: Which teacher will supervise this activity?
+      placeholder: e.g., "Ms. Rodriguez", "Mr. Chen"
+    validations:
+      required: true
+
+  - type: textarea
+    id: special-requirements
+    attributes:
+      label: Special Requirements or Equipment
+      description: Does this activity need any special equipment, room setup, or other requirements?
+      placeholder: e.g., "Requires computer lab with programming software", "Needs art supplies budget"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that would help implement this feature?
+      placeholder: e.g., "This activity should be similar to the existing Programming Class but focused on robotics"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Confirm what needs to be implemented (check all that apply)
+      options:
+        - label: Add the new activity to the database with all specified details
+          required: true
+        - label: Activity should appear in the main activities list on the website
+          required: true
+        - label: Teachers should be able to register students for this activity
+          required: true
+        - label: Activity should be filterable by category and schedule
+          required: true
+        - label: Activity should show participant count and capacity
+          required: true
